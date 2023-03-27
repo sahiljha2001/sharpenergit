@@ -63,9 +63,57 @@
 // even[i].style.color='green';
 // }
 // even[1].style.color='black';
+//TRAVERSING THE NODE
+var itemList = document.parentNode('#items');
+console.log(itemList.parentNode);
+itemList.parentNode.style.backgroundColor ='orange';
+console.log(itemList.parentNode.parentNode);
+//parent elements
+console.log(itemList.parentElement);
+itemList.parentElement.style.backgroundColor ='orange';
+console.log(itemList.parentElement.parentElement);
+// childnodes
+console.log(itemList.childNodes);
+console.log(itemList.children);
+console.log(itemList.children[1]);
+itemList.children[1].style.backgroundColor='pink';
 
+//firstChild
+console.log(itemList.firstChild);
+//first Element child
+console.log(itemList.firstElementChild);
+itemList.firstElementChild.textContent='hello 1';
+//lastchild
+console.log(itemList.lastChild);
+//last element child
+console.log(itemList.lastElementChild);
+itemList.lastElementChild.textContent='hello 4';
+ //nextSibling
+ console.log(itemList.nextSibling);
+ nextElementSibling
+ console.log(itemList.nextElementSibling);
+ //previousSibling
+ console.log(itemList.previousSibling);
+ previousElementSibling
+ console.log(itemList.previousElementSibling);
+ itemList.previousElementSibling.style.color ='green';
 
-
+ //create a div
+ var newDiv = document.createElement('div');
+ //add class
+ newDiv.className='hello1';
+ // add id
+ newDiv.id ='hello1';
+ // add attr
+ newDiv.setAttribute('title ','hello Div');
+ // Create text node
+ var newDivText =document.createTextNode('Hello world');
+ //add text to div
+ newDiv.appendChild(newDivText);
+ var container = document.querySelector('header .container');
+ var h1 = document.quwerySelector('header h1');
+ console.log(newDiv);
+ container.insertBefore(newDiv,h1);
 
 
 
