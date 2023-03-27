@@ -12,6 +12,6 @@ var headerTitle = document.getElementById('header-title');
 console.log(headerTitle);
 // headerTitle.textContent='hello';
 headerTitle.innerText='sahil';
-// headerTitle.innerHTML='<h3>sahil</h3>';
+headerTitle.innerHTML='<h3>sahil</h3>';
 headerTitle.style.color='red';
 headerTitle.style.borderBottom ='solid 3px #000';
