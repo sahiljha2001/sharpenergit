@@ -15,3 +15,15 @@ headerTitle.innerText='sahil';
 headerTitle.innerHTML='<h3>sahil</h3>';
 headerTitle.style.color='red';
 headerTitle.style.borderBottom ='solid 3px #000';
+// GET ELEMENTS BY CLASS NAME
+var item = document.getElementsByClassName('list-group-item');
+console.log(item);
+console.log(item[2]);
+item[1].textContent='sahil';
+item[2].style.fontweight='bold';
+item[1].style.backgroundcolor='red';
+ for(let i=0;i<item.length;i++){
+    item[i].style.backgroundcolor='green';
+ }
+ //GET ELEMNET BY TAG NAME;
+ 
