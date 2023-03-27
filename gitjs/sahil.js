@@ -1,0 +1,17 @@
+// console.dir(document);
+// console.log(document.URL);
+// console.log(document.title);
+// console.log(document.doctype);
+// console.log(document.head);
+// console.log(document.body);
+// console.log(document.forms[0]);
+// console.log(document.links);
+// console.log(document.images);
+// console.log(document.domain);
+var headerTitle = document.getElementById('header-title');
+console.log(headerTitle);
+// headerTitle.textContent='hello';
+// headerTitle.innerText='sahil';
+headerTitle.innerHTML='<h3>sahil</h3>';
+headerTitle.style.color='red';
+headerTitle.style.borderBottom ='solid 3px #000';
