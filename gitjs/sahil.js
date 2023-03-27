@@ -26,4 +26,12 @@ item[1].style.backgroundcolor='red';
     item[i].style.backgroundcolor='green';
  }
  //GET ELEMNET BY TAG NAME;
- 
+ var li = document.getElementsByTagName('li');
+ console.log(li);
+ console.log(li[2]);
+li[1].textContent='sahil';
+li[2].style.fontweight='bold';
+li[1].style.backgroundcolor='red';
+ for(let i=0;i<li.length;i++){
+    li[i].style.backgroundcolor='green';
+ }
