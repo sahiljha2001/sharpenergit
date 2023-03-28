@@ -110,7 +110,7 @@ var itemList = document.querySelector('#items');
  // add attr
 //  newDiv.setAttribute('title ','hello Div');
  // Create text node
-//  var newDivText =document.createTextNode('Hello world');
+ var newDivText =document.createTextNode('Hello world');
  // add text to div
 //  newDiv.appendChild(newDivText);
 //  var container = document.querySelector('header .container');
