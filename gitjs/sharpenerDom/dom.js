@@ -40,6 +40,7 @@ function addItem(e){
 editBtn.className = 'edit-button';
 // Append text node
   editBtn.innerHtml='Edit';
+  //giving name to editbutton
  editBtn.appendChild(document.createTextNode('Edit'));
   // Append button to li
   li.appendChild(editBtn);
