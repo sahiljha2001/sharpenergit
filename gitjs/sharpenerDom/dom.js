@@ -2,7 +2,6 @@ var form = document.getElementById('addForm');
 var item = document.getElementById('items');
 var itemList= document.getElementsByClassName('list-group-item');
 var filter = document.getElementById('filter');
-
 // Form submit event
 form.addEventListener('submit', addItem);
 // Delete event
@@ -49,8 +48,6 @@ editBtn.className = 'edit-button';
   // Append button to li
   li.appendChild(deleteBtn);
   //adding edit button to everyonein list
-
- 
 
   // Append li to list
   item.appendChild(li);

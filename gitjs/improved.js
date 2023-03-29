@@ -1,1 +1,2 @@
-console.log("hello world");
+localStorage.setItem('key','sahil');
+localStorage.getItem('key');
