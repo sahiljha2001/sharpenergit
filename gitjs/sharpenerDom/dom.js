@@ -1,11 +1,12 @@
 var form = document.getElementById('addForm');
-var itemList = document.getElementById('items');
+var item = document.getElementById('items');
+var itemList= document.getElementsByClassName('list-group-item');
 var filter = document.getElementById('filter');
 
 // Form submit event
 form.addEventListener('submit', addItem);
 // Delete event
-itemList.addEventListener('click', removeItem);
+item.addEventListener('click', removeItem);
 // Filter event
 filter.addEventListener('keyup', filterItems);
 
@@ -14,15 +15,28 @@ function addItem(e){
   e.preventDefault();
 
   // Get input value
-  var newItem = document.getElementById('item').value;
-
+  var newItem1 = document.getElementById('item1').value;
+  var newItem2 = document.getElementById('item2').value;
+    localStorage.setItem('item1',newItem1);
+    localStorage.setItem('item2', newItem2);
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(newItem1));
+  li.appendChild(document.createTextNode(" "+newItem2));
 
+  //adding edit button to everyonein list
+
+ var editBtn = document.createElement('button');
+editBtn.className = 'edit-button';
+// Append text node
+  editBtn.innerHtml='Edit';
+  //giving name to editbutton
+ editBtn.appendChild(document.createTextNode('Edit'));
+  // Append button to li
+  li.appendChild(editBtn);
   // Create del button element
   var deleteBtn = document.createElement('button');
 
@@ -36,17 +50,10 @@ function addItem(e){
   li.appendChild(deleteBtn);
   //adding edit button to everyonein list
 
- var editBtn = document.createElement('button');
-editBtn.className = 'edit-button';
-// Append text node
-  editBtn.innerHtml='Edit';
-  //giving name to editbutton
- editBtn.appendChild(document.createTextNode('Edit'));
-  // Append button to li
-  li.appendChild(editBtn);
+ 
 
   // Append li to list
-  itemList.appendChild(li);
+  item.appendChild(li);
 }
 
 // Remove item
@@ -54,7 +61,7 @@ function removeItem(e){
   if(e.target.classList.contains('delete')){
     if(confirm('Are You Sure?')){
       var li = e.target.parentElement;
-      itemList.removeChild(li);
+      item.removeChild(li);
     }
   }
 }
@@ -63,15 +70,22 @@ function removeItem(e){
 function filterItems(e){
   // convert text to lowercase
   var text = e.target.value.toLowerCase();
+  
   // Get list
-  var items = itemList.getElementsByTagName('li');
+  var itemsl = item.getElementsByTagName('li');
+  
   // Convert to an array
-  Array.from(items).forEach(function(item){
-    var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+  Array.from(itemsl).forEach(function(item){
+    var itemName1 = item.firstChild.textContent;
+    var itemName2 = item.childNode[1].textContent;
+    
+     if(itemName1.toLowerCase().indexOf(text) != -1||itemName2.toLowerCase().indexOf(text) != -1){
       item.style.display = 'block';
+      
+
     } else {
       item.style.display = 'none';
+      
     }
   });
 }
