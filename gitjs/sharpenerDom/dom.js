@@ -16,8 +16,17 @@ function addItem(e){
   // Get input value
   var newItem1 = document.getElementById('item1').value;
   var newItem2 = document.getElementById('item2').value;
-    localStorage.setItem('item1',newItem1);
-    localStorage.setItem('item2', newItem2);
+  let userDetail={
+    name1: newItem1,
+    name2: newItem2
+  };
+  let myObj_serialized= JSON.stringify(userDetail);
+  localStorage.setItem('userDetail' , myObj_serialized);
+  let myObj_Deserialized=JSON.parse(localStorage.getItem('userDetail'));
+  
+
+    // localStorage.setItem('item1',newItem1);
+    // localStorage.setItem('item2', newItem2);
   // Create new li element
   var li = document.createElement('li');
   // Add class
