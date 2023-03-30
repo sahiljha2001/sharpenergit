@@ -8,9 +8,9 @@ item.addEventListener('click', removeItem);
 submit.addEventListener('click', storeUserDetails );
 function storeUserDetails(e){
     e.preventDefault();
-    // Get input value
+     // Get input value
   let newItem1 = document.getElementById('name').value;
-  let newItem2 = document.getElementById('Emailid').value;
+  var newItem2 = document.getElementById('Emailid').value;
   let newItem3 = document.getElementById('phoneno').value;
   let userDetail={
      userName: newItem1,
@@ -23,7 +23,7 @@ function storeUserDetails(e){
   let myObj_Deserialized=JSON.parse(localStorage.getItem('userDetail'));
   showUserOnScreen(userDetail);
   
-
+ 
 
 }
   function showUserOnScreen(userDetail){
@@ -44,20 +44,24 @@ function storeUserDetails(e){
   // Append button to li
   childElement.appendChild(deleteBtn);
   
-
+deleteBtn. onclick = ()=>{
+    localStorage.removeItem( userDetail.userEmail);
+}
 
 
 
   }
 
-  function removeItem(e){
+  function removeItem(e)
+  {
      if(e.target.classList.contains('delete'))
      {
        var li = e.target.parentElement;
-      item.removeChild(li);
-    }  
-
-
+       item.removeChild(li);
+       
+     
+     
+     }
 
 
 
