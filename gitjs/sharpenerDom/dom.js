@@ -23,7 +23,7 @@ function addItem(e){
   let myObj_serialized= JSON.stringify(userDetail);
   localStorage.setItem('userDetail' , myObj_serialized);
   let myObj_Deserialized=JSON.parse(localStorage.getItem('userDetail'));
-  
+
 
     // localStorage.setItem('item1',newItem1);
     // localStorage.setItem('item2', newItem2);
