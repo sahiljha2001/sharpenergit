@@ -1,9 +1,10 @@
 let userName=document.querySelector('#name');
-let userEmail=document.querySelector('#Emailid');
+let userEmailid=document.querySelector('#Emailid');
 let userPhone=document.querySelector('#phoneno');
 let item = document.querySelector('.showing-list');
 let submit = document.querySelector('#sub_btn');
- 
+ let edit = document.querySelector('.edit-button');
+ let form= document.querySelector('.container');
 item.addEventListener('click', removeItem);
 submit.addEventListener('click', storeUserDetails );
 function storeUserDetails(e){
@@ -39,7 +40,7 @@ function storeUserDetails(e){
   deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
 
   // Append text node
-  deleteBtn.appendChild(document.createTextNode('delete'));
+  deleteBtn.appendChild(document.createTextNode(" "+'delete'));
 
   // Append button to li
   childElement.appendChild(deleteBtn);
@@ -48,13 +49,24 @@ deleteBtn. onclick = ()=>{
     localStorage.removeItem( userDetail.userEmail);
 }
 
+//adding edit button to everyonein list
 
+ var editBtn = document.createElement('button');
+ editBtn.className = 'edit-button';
 
+  //giving name to editbutton
+ editBtn.appendChild(document.createTextNode('Edit'));
+  // Append button to li
+  childElement.appendChild(editBtn);
+ editBtn.onclick =()=>{
+     localStorage.removeItem( userDetail.userEmail);
+     
+ }
   }
 
   function removeItem(e)
   {
-     if(e.target.classList.contains('delete'))
+     if(e.target.classList.contains('delete')|| e.target.classList.contains('edit-button'))
      {
        var li = e.target.parentElement;
        item.removeChild(li);
