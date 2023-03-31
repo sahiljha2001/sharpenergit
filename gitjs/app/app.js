@@ -14,9 +14,9 @@ function storeUserDetails(e){
   var newItem2 = document.getElementById('Emailid').value;
   let newItem3 = document.getElementById('phoneno').value;
   let userDetail={
-     userName: newItem1,
-    userEmail:newItem2,
-    userPhone:newItem3
+     Name: newItem1,
+    Email:newItem2,
+    Phone:newItem3
   
   };
   let myObj_serialized= JSON.stringify(userDetail);
@@ -31,7 +31,7 @@ function storeUserDetails(e){
     
     const parentElement = document.querySelector('.showing-list');
     const childElement = document.createElement('li');
-    childElement.textContent=userDetail.userName + " " + userDetail.userEmail + " " + userDetail.userPhone;
+    childElement.textContent=userDetail.Name + " " + userDetail.Email + " " + userDetail.Phone;
     parentElement.appendChild(childElement);
     // Create del button element
   var deleteBtn = document.createElement('button');
@@ -46,7 +46,7 @@ function storeUserDetails(e){
   childElement.appendChild(deleteBtn);
   
 deleteBtn. onclick = ()=>{
-    localStorage.removeItem( userDetail.userEmail);
+    localStorage.removeItem( userDetail.Email);
 }
 
 //adding edit button to everyonein list
@@ -60,7 +60,10 @@ deleteBtn. onclick = ()=>{
   childElement.appendChild(editBtn);
  editBtn.onclick =()=>{
      localStorage.removeItem( userDetail.userEmail);
-     
+     parentElement.removeChild(childElement);
+     userName.value=userDetail.Name
+     userEmailid.value = userDetail.Email
+     userPhone.value = userDetail.Phone
  }
   }
 
