@@ -20,6 +20,7 @@ function storeUserDetails(e) {
     Email: newItem2,
     Phone: newItem3,
   };
+  
   axios.post("https://crudcrud.com/api/a2094b3ec32743bb840c839431ca320c/appointmentData",userDetail).then((response)=>{
   showUserOnScreen(response.data);
   console.log(response);
