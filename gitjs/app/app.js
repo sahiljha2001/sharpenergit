@@ -20,19 +20,40 @@ function storeUserDetails(e) {
     Email: newItem2,
     Phone: newItem3,
   };
-  
-  axios.post("https://crudcrud.com/api/a2094b3ec32743bb840c839431ca320c/appointmentData",userDetail).then((response)=>{
-  showUserOnScreen(response.data);
-  console.log(response);
 
-  }).catch((error)=>{
-    console.log(error);
-  })
-  let myObj_serialized = JSON.stringify(userDetail);
-  localStorage.setItem(newItem2, myObj_serialized);
-  let myObj_Deserialized = JSON.parse(localStorage.getItem("userDetail"));
-  showUserOnScreen(userDetail);
+  const data = axios
+    .post(
+      "https://crudcrud.com/api/dff7d296724040afbafab310d4c45be0/appointmentData",
+      userDetail
+    )
+    .then((response) => {
+      showUserOnScreen(response.data);
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+ 
 }
+window.addEventListener("DOMContentLoaded", () => {
+  const data = axios
+    .get(
+      "https://crudcrud.com/api/dff7d296724040afbafab310d4c45be0/appointmentData"
+    )
+    .then((respone) => {
+      console.log(respone.data);
+
+      for (var i = 0; i < respone.data.length; i++) {
+        showUserOnScreen(respone.data[i]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  
+
+  console.log(data);
+});
 function showUserOnScreen(userDetail) {
   const parentElement = document.querySelector(".showing-list");
   const childElement = document.createElement("li");
