@@ -35,6 +35,7 @@ function storeUserDetails(e) {
     });
  
 }
+
 window.addEventListener("DOMContentLoaded", () => {
   const data = axios
     .get(
