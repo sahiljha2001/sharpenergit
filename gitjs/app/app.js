@@ -185,7 +185,7 @@
    //     const userDetailsString = localStorageObj[key];
    //     const userDetailsObj = JSON.parse(userDetailsString);
    //     showNewUserOnScreen(userDetailsObj)
-   // }
+   //     }
 
    console.log(data);
  });
